@@ -1,0 +1,51 @@
+
+{
+    "name": "webhappens/conditional-methods",
+    "description": "Allows for simple addition of If, Unless and IfNotNull on method calls to on the class that uses this trait.",
+    "keywords": [
+        "webhappens",
+        "conditional-methods"
+    ],
+    "homepage": "https://github.com/webhappens/conditional-methods",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Sam Leicester",
+            "email": "sam@webhappens.co.uk",
+            "homepage": "https://webhappens.co.uk",
+            "role": "Developer"
+        },
+        {
+            "name": "Ben Gurney",
+            "email": "ben@webhappens.co.uk",
+            "homepage": "https://webhappens.co.uk",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.3"
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^2.12",
+        "symfony/var-dumper": "^4.3",
+        "phpunit/phpunit": "^8.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "WebHappens\\ConditionalMethods\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "WebHappens\\ConditionalMethods\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "fix": "vendor/bin/php-cs-fixer",
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+    },
+    "config": {
+        "sort-packages": true
+    }
+}
