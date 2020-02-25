@@ -1,7 +1,7 @@
 
 {
     "name": "webhappens/conditional-methods",
-    "description": "Allows for simple addition of If, Unless and IfNotNull on method calls to on the class that uses this trait.",
+    "description": "Make method calls conditional by simply appending If, Unless or IfNotNull when you call them.",
     "keywords": [
         "webhappens",
         "conditional-methods"
