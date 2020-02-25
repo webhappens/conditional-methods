@@ -74,6 +74,7 @@ $insurer->renewUnless($car->insuranceIsValid(), $car);
 - [Ben Gurney](mailto:ben@webhappens.co.uk)
 - [Sam Leicester](mailto:sam@webhappens.co.uk)
 - [All Contributors](../../contributors)
+- Big thanks to the guys over at [Spatie](https://spatie.be) for the inspiration on this through their [laravel-html](https://github.com/spatie/laravel-html) package ❤️
 
 ## License
 
