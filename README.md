@@ -2,7 +2,7 @@
 
 # Conditional methods
 
-Make method calls conditional by simply appending If, Unless or IfNotNull when you call them. Conditional methods allow you to pass a condition to determine whether they should be run or not, removing the need to wrap them inside logic. This is especially useful when you are chaining.
+Make method calls conditional by simply appending If or Unless when you call them. Conditional methods allow you to pass a condition to determine whether they should be run or not, removing the need to wrap them inside logic. This is especially useful when you are chaining.
 
  - [Installation](#installation)
  - [If](#if)
@@ -73,8 +73,8 @@ $insurer->renewUnless($car->insuranceIsValid(), $car);
 
 - Sam Leicester: sam@webhappens.co.uk
 - Ben Gurney: ben@webhappens.co.uk
-- [All Contributors](../../contributors)
 - Big thanks to the guys over at [Spatie](https://spatie.be) for the inspiration on this through their [laravel-html](https://github.com/spatie/laravel-html) package ❤️
+- [All Contributors](../../contributors)
 
 ## License
 

@@ -1,6 +1,6 @@
 {
     "name": "webhappens/conditional-methods",
-    "description": "Make method calls conditional by simply appending If, Unless or IfNotNull when you call them.",
+    "description": "Make method calls conditional by simply appending If or Unless when you call them.",
     "keywords": [
         "webhappens",
         "conditional-methods"
