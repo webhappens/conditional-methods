@@ -11,22 +11,20 @@ Make method calls conditional by simply appending If or Unless when you call the
 ## Installation
 
 Install via composer:
-​
+
 ```shell
 composer require webhappens/conditional-methods
 ```
-​
-**If your class is not currently using the `__call` method:**
 
-Insert the `ConditionalMethodsWithCall` trait into your class.
+### Option 1
+If your class is not currently using the `__call` method, you can just insert the `ConditionalMethodsWithCall` trait into your class:
 
 ```php
 use \WebHappens\ConditionalMethods\ConditionalMethodsWithCall;
 ```
 
-**If your class is already using the `__call` method or if you'd prefer to implement it on your class like this:**
-
-Insert the `ConditionalMethods` trait into your class.
+### Option 2
+If your class is already using the `__call` method, or if you'd prefer to implement it on your class like this, insert the `ConditionalMethods` trait into your class:
 
 ```php
 use \WebHappens\ConditionalMethods\ConditionalMethods;
