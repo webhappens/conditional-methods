@@ -1,3 +1,5 @@
+![tests](https://github.com/webhappens/conditional-methods/workflows/tests/badge.svg)
+
 # Conditional methods
 
 Make method calls conditional by simply appending If, Unless or IfNotNull when you call them. Conditional methods allow you to pass a condition to determine whether they should be run or not, removing the need to wrap them inside logic. This is especially useful when you are chaining.
@@ -69,8 +71,8 @@ $insurer->renewUnless($car->insuranceIsValid(), $car);
 
 ## Credits
 
-- [Ben Gurney](mailto:ben@webhappens.co.uk)
-- [Sam Leicester](mailto:sam@webhappens.co.uk)
+- Sam Leicester: sam@webhappens.co.uk
+- Ben Gurney: ben@webhappens.co.uk
 - [All Contributors](../../contributors)
 - Big thanks to the guys over at [Spatie](https://spatie.be) for the inspiration on this through their [laravel-html](https://github.com/spatie/laravel-html) package ❤️
 
