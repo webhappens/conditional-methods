@@ -3,7 +3,6 @@
 namespace WebHappens\ConditionalMethods;
 
 use Closure;
-use BadMethodCallException;
 use WebHappens\ConditionalMethods\Str;
 
 trait ConditionalMethods
@@ -28,19 +27,15 @@ trait ConditionalMethods
         return ! is_null($value) ? $callback($this) : $this;
     }
 
-    public function __call($method, $arguments)
+    protected function callConditionalMethod($type, $method, $arguments)
     {
-        if ($type = static::matchConditionalMethod($method)) {
-            $value = array_shift($arguments);
-            $method = str_replace($type, '', $method);
-            $callback = function () use ($method, $arguments) {
-                return $this->{$method}(...$arguments);
-            };
+        $value = array_shift($arguments);
+        $method = str_replace($type, '', $method);
+        $callback = function () use ($method, $arguments) {
+            return $this->{$method}(...$arguments);
+        };
 
-            return $this->{lcfirst($type)}($value, $callback);
-        }
-
-        throw new BadMethodCallException;
+        return $this->{lcfirst($type)}($value, $callback);
     }
 
     protected static function matchConditionalMethod($method)

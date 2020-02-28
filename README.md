@@ -16,32 +16,40 @@ Install via composer:
 composer require webhappens/conditional-methods
 ```
 ​
-Import the class into your namespace:
-​
+**If your class is not currently using the `__call` method:**
+
+Insert the `ConditionalMethodsWithCall` trait into your class.
+
 ```php
-use WebHappens\ConditionalMethods\ConditionalMethods;
+use \WebHappens\ConditionalMethods\ConditionalMethodsWithCall;
 ```
 
-If your class is not currently using the `__call` method, you may simply `use` the trait.
+**If your class is already using the `__call` method or if you'd prefer to implement it on your class like this:**
+
+Insert the `ConditionalMethods` trait into your class.
 
 ```php
-use ConditionalMethods;
+use \WebHappens\ConditionalMethods\ConditionalMethods;
 ```
 
-If your class is using the `__call` method already, you must use a trait method alias and call it from within your existing `__call` method.
+Then add the following into the `__call` method on your class:
 
 ```php
-use ConditionalMethods {
-    ConditionalMethods::__call as __conditional_methods_call
-}
-
 public function __call($method, $arguments)
 {
-    try {
-        return $this->__conditional_methods_call($method, $arguments);
-    } catch (\BadMethodCallException $e) {}
+    // ...
+
+    if ($type = static::matchConditionalMethod($method)) {
+        return $this->callConditionalMethod($type, $method, $arguments);
+    }
+
+    // ...
+
+    // throw new \BadMethodCallException();
 }
 ```
+
+Feel free to look at the `ConditionalMethodsWithCall` trait for more implementation details.
 
 ## If
 
