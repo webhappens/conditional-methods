@@ -16,27 +16,17 @@ Install via composer:
 composer require webhappens/conditional-methods
 ```
 
-### Option 1
-If your class is not currently using the `__call` method, you can just insert the `ConditionalMethodsWithCall` trait into your class:
-
-```php
-use \WebHappens\ConditionalMethods\ConditionalMethodsWithCall;
-```
-
-### Option 2
-If your class is already using the `__call` method, or if you'd prefer to implement it on your class like this, insert the `ConditionalMethods` trait into your class:
+Insert the `ConditionalMethods` trait into your class:
 
 ```php
 use \WebHappens\ConditionalMethods\ConditionalMethods;
 ```
 
-Then add the following into the `__call` method on your class:
+If your class is already using the `__call` method, add the following to it:
 
 ```php
 public function __call($method, $arguments)
 {
-    // ...
-
     if ($type = static::matchConditionalMethod($method)) {
         return $this->callConditionalMethod($type, $method, $arguments);
     }
@@ -46,8 +36,6 @@ public function __call($method, $arguments)
     // throw new \BadMethodCallException();
 }
 ```
-
-Feel free to look at the `ConditionalMethodsWithCall` trait for more implementation details.
 
 ## If
 
@@ -81,6 +69,8 @@ $insurer->renewUnless($car->insuranceIsValid(), $car);
 - Ben Gurney: ben@webhappens.co.uk
 - Big thanks to the guys over at [Spatie](https://spatie.be) for the inspiration on this through their [laravel-html](https://github.com/spatie/laravel-html) package ❤️
 - [All Contributors](../../contributors)
+
+Our `Str` class is just a copy of some functions from Laravel's `Str` helper.
 
 ## License
 

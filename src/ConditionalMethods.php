@@ -3,6 +3,7 @@
 namespace WebHappens\ConditionalMethods;
 
 use Closure;
+use BadMethodCallException;
 use WebHappens\ConditionalMethods\Str;
 
 trait ConditionalMethods
@@ -25,6 +26,19 @@ trait ConditionalMethods
     public function ifNotNull($value, Closure $callback)
     {
         return ! is_null($value) ? $callback($this) : $this;
+    }
+
+    public function __call($method, $arguments)
+    {
+        if ($type = static::matchConditionalMethod($method)) {
+            return $this->callConditionalMethod($type, $method, $arguments);
+        }
+
+        throw new BadMethodCallException(sprintf(
+            'Call to undefined method %s::%s()',
+            static::class,
+            $method
+        ));
     }
 
     protected function callConditionalMethod($type, $method, $arguments)
