@@ -2,11 +2,12 @@
 
 namespace WebHappens\ConditionalMethods\Tests\Stubs;
 
-use WebHappens\ConditionalMethods\ConditionalMethodsWithCall;
+use WebHappens\ConditionalMethods\ConditionalMethods;
+
 
 class Model
 {
-    use ConditionalMethodsWithCall;
+    use ConditionalMethods;
 
     public function toUpper($value)
     {
